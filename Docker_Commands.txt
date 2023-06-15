@@ -1,0 +1,62 @@
+https://collabnix.com/docker-cheatsheet/
+
+
+* To Pull Image
+
+-commad prompt:
+
+	docker pull mysql (mysql is image name)
+
+* list images in docker
+
+	docker image ls
+
+* list runing images in docker
+
+	docker ps
+
+* list all containers in docker
+
+	docker ps -a
+
+* run image
+
+	docker run image_id
+
+* stop contaier
+
+	docker stop cotainer_id
+
+* port mapping from old to new port
+
+	docker run -p 9000:8080 bitnami/nginx:latest
+
+* to give name manuly for container
+
+	docker run --name nginx -P bitnami/nginx:latest
+
+* to remove container
+
+	docker rm cotainer_id (1st 4 digits are fine)
+
+* remove all the conatiners from docker
+
+	docker ps -a -q (gives all the cotainer id's)
+
+	docker rm $(docker ps -a -q)  --(remove all contaiers running)
+
+------(ineuron course provided code)
+
+docker pull bitnami/nginx:latest -> pulls nginx image
+docker pull bitnami/nginx:[TAG] -> image with some specific tag
+docker run --name nginx -P bitnami/nginx:latest -> randomly assigns port
+docker port nginx -> get the port of container
+docker stop nginx -> stop the container
+docker run -p 9000:8080 bitnami/nginx:latest -> manually port mapped to 9000
+docker images -> gives list of all images
+docker ps -a -> gives list all containers
+docker ps -> gives list of all running containers
+docker rm <container id> -> deletes container
+docker image ls -> lists all the images
+docker rmi <image name> -> deletes image
+
